@@ -9,16 +9,16 @@ const button = document.getElementById("button");
                     degreesContent +='<thead>';
                     degreesContent +='<tr>School</tr>'
                         +responseObject.my_degrees[i].school
-                        + '"';
+                        + '';
                     degreesContent +='<tr>Major</tr>'
                         +responseObject.my_degrees[i].major
-                        + '"';
+                        + '';
                     degreesContent +='<tr>Type</tr>'
                         +responseObject.my_degrees[i].type
-                        + '"';
+                        + '';
                     degreesContent +='<tr>Graduation</tr>'
                         +responseObject.my_degrees[i].graduation
-                        + '"';
+                        + '';
                 }
                 document.getElementById("table").innerHTML = degreesContent;
             }
