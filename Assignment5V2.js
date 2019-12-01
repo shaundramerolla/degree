@@ -2,14 +2,14 @@
     var xhr;
     document.getElementById("button").onclick = function () { makeRequest('Assignment5.json');
     };
-function makeRequest (shaundramerolla.github.io/degree) {
+function makeRequest (url) {
             xhr = new XMLHttpRequest();
             if(!xhr) {
                 alert("Could not create and XMLHTTP instance");
                 return false;
             }
             xhr.onreadystatechange = tableContents;
-            xhr.open('GET', shaundramerolla.github.io/degree);
+            xhr.open('GET', url);
             xhr.send(null);
         }
         function tablecContents() {
