@@ -12,3 +12,7 @@ body {
     padding: 5px;
     background-color: #ffb4b4;
 }
+div.table {
+    border: 2px;
+    border-color: black;
+}
