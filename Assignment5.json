@@ -1,20 +1,17 @@
 {
     "my_degrees": [
         {
-            "degree": {
-                "school": "University of Rhode Island",
-                "major": "Entrepreneurial Management",
-                "type": "BSBA",
-                "graduation": "May 2012"
-            }
+            "school": "University of Rhode Island",
+            "major": "Entrepreneurial Management",
+            "type": "BSBA",
+            "graduation": "May 2012"
+            
         },
         {
-            "degree": {
-                "school": "Boston University",
-                "major": "Web App Development",
-                "type": "MS",
-                "graduation": "December 2020"
-            }
+            "school": "Boston University",
+            "major": "Web App Development",
+            "type": "MS",
+            "graduation": "December 2020"
         }
     ]
 }
