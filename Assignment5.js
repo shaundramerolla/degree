@@ -7,16 +7,16 @@ const button = document.getElementById("button");
                 var degreesContent = '';
                 for (var i=0; i<responseObject.my_degrees.length; i++) {
                     degreesContent +='<thead>';
-                    degreesContent +='<tr>School</tr>'
+                    degreesContent +='<th>School</th>'
                         +responseObject.my_degrees[i].school
                         + '';
-                    degreesContent +='<tr>Major</tr>'
+                    degreesContent +='<th>Major</th>'
                         +responseObject.my_degrees[i].major
                         + '';
-                    degreesContent +='<tr>Type</tr>'
+                    degreesContent +='<th>Type</th>'
                         +responseObject.my_degrees[i].type
                         + '';
-                    degreesContent +='<tr>Graduation</tr>'
+                    degreesContent +='<th>Graduation</th>'
                         +responseObject.my_degrees[i].graduation
                         + '';
                 }
