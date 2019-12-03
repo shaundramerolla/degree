@@ -6,17 +6,14 @@ const button = document.getElementById("button");
                 responseObject = JSON.parse(xhr.responseText);
                 var degreesContent = '';
                 for (var i=0; i<responseObject.my_degrees.length; i++) {
-                    degreesContent += '<thead>';
-                    degreesContent += '<tr><th>School</th><th>Major</th><th>Type</th><th>Graduation</th></tr>';
-                    degreesContent +='</thead>';
-                    degreesContent +='<tbody>';
-                    degreesContent +='<tr></tr>'
-                        +responseObject.my_degrees[i].school
-                        +responseObject.my_degrees[i].major
-                        +responseObject.my_degrees[i].type
-                        +responseObject.my_degrees[i].graduation
+                    degreesContent += '<body>';
+                    degreesContent += responseObject.my_degrees[i].school;
+                    degreesContent += responseObject.my_degrees[i].major;
+                    degreesContent += responseObject.my_degrees[i].type;
+                    degreesContent += responseObject.my_degrees[i].graduation;
+                    degreesContent += '</body>';
                 }
-                document.getElementById("table").innerHTML = degreesContent;
+                document.getElementsByClassName("tableBody").innerHTML = degreesContent;
             }
         };
         xhr.open('GET', 'Assignment5.json', true);
