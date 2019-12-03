@@ -12,8 +12,15 @@ body {
     padding: 5px;
     background-color: #ffb4b4;
 }
-div.table {
-    text-align: left;
-    border: 2px;
-    border-color: black;
+table {
+    align-left
+    border: 2px solid black;
 }
+thead {
+    color: black;
+}
+tbody {
+    color: black;
+    font-weight: normal;
+}
+
