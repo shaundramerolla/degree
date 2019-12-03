@@ -6,14 +6,15 @@ const button = document.getElementById("button");
                 responseObject = JSON.parse(xhr.responseText);
                 var degreesContent = '';
                 for (var i=0; i<responseObject.my_degrees.length; i++) {
-                    degreesContent += '<tr></tr>'
+                    degreesContent += '<tr>'
                     degreesContent += responseObject.my_degrees[i].school;
-                    degreesContent += '<tr></tr>'
+                    degreesContent += '<br>'
                     degreesContent += responseObject.my_degrees[i].major;
-                    degreesContent += '<tr></tr>'
+                    degreesContent += '<br>'
                     degreesContent += responseObject.my_degrees[i].type;
-                    degreesContent += '<tr></tr>'
+                    degreesContent += '<br>'
                     degreesContent += responseObject.my_degrees[i].graduation;
+                    degreesContent += '</tr>'
                 }
                 document.getElementById("empty").innerHTML = degreesContent;
             }
