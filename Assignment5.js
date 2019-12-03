@@ -6,7 +6,6 @@ const button = document.getElementById("button");
                 responseObject = JSON.parse(xhr.responseText);
                 var degreesContent = '';
                 for (var i=0; i<responseObject.my_degrees.length; i++) {
-                    degreesContent +='<thead>';
                     degreesContent +='<th>School</th>'
                         +responseObject.my_degrees[i].school
                         + ' ';
