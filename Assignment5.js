@@ -4,27 +4,33 @@ const button = document.getElementById("button");
         xhr.onload = function () {
             if(xhr.status === 200) {
                 responseObject = JSON.parse(xhr.responseText);
-                var degreesContent = '';
+                var column = [];
                 for (var i=0; i<responseObject.my_degrees.length; i++) {
-                    degreesContent +='<th>School</th>'
-                        +responseObject.my_degrees[i].school
-                        + ' ';
-                    degreesContent +='<th>Major</th>'
-                        +responseObject.my_degrees[i].major
-                        + ' ';
-                    degreesContent +='<th>Type</th>'
-                        +responseObject.my_degrees[i].type
-                        + ' ';
-                    degreesContent +='<th>Graduation</th>'
-                        +responseObject.my_degrees[i].graduation
-                        + '<br><br>';
+                    for (var col in responseObject[i]){
+                        if (column.indexOf(col) === -1) {
+                            column.push(col);
+                        }
+                    }
                 }
-                document.getElementById("table").innerHTML = degreesContent;
+                var table = document.createElement ("table");
+                var tr = table.row(-1);
+                for (var i=0; i<column.length; i++){
+                    var th = document.createElement("th");
+                    th.innerHTML = column[i];
+                    tr.appendChild(th);
+                }          
+                for (var i=0; i<responseObject.my_degrees.length; i++){
+                    tr=table.row(-1);
+                    for (var c=0; c<column.length; c++){
+                        var cell = tr.insertCell(-1);
+                        cell.innerHTML = responseObject[i][column[c]]
+                    }
+                }
+                var table = document.getElementById("table");
+                table.innerHTML = "";
+                table.appendChild(table);
             }
         };
         xhr.open('GET', 'Assignment5.json', true);
         xhr.send(null);
     }
-
-
-
