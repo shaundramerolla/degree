@@ -9,3 +9,4 @@ const button = document.getElementById("button");
         };
         xhr.open('GET', 'Assignment5.json', true);
         xhr.send(null);
+    }
