@@ -13,7 +13,7 @@ const button = document.getElementById("button");
                     degreesContent += responseObject.my_degrees[i].graduation;
                     degreesContent += '</body>';
                 }
-                document.getElementsByID("tableBody").innerHTML = degreesContent;
+                document.getElementById("tableBody").innerHTML = degreesContent;
             }
         };
         xhr.open('GET', 'Assignment5.json', true);
