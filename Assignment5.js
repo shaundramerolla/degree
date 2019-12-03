@@ -4,29 +4,23 @@ const button = document.getElementById("button");
         xhr.onload = function () {
             if(xhr.status === 200) {
                 responseObject = JSON.parse(xhr.responseText);
-                var column = [];
+                var degreesContent = '';
                 for (var i=0; i<responseObject.my_degrees.length; i++) {
-                    for (var col in responseObject[i]){
-                        if (column.indexOf(col) === -1) {
-                            column.push(col);
-                        }
-                    }
+                    degreesContent +='<thead>';
+                    degreesContent +='<tr>School</tr>'
+                        +responseObject.my_degrees[i].school
+                        + ' ';
+                    degreesContent +='<tr>Major</tr>'
+                        +responseObject.my_degrees[i].major
+                        + ' ';
+                    degreesContent +='<tr>Type</tr>'
+                        +responseObject.my_degrees[i].type
+                        + ' ';
+                    degreesContent +='<tr>Graduation</tr>'
+                        +responseObject.my_degrees[i].graduation
+                        + '<br><br>';
                 }
-                var table = document.createElement("table");
-                var tr = table.insertRow(-1);
-                for (var i=0; i<column.length; i++){
-                    var th = document.createElement("th");
-                    th.innerHTML = column[i];
-                    tr.appendChild(th);
-                }          
-                for (var i=0; i<responseObject.my_degrees.length; i++){
-                    tr=table.insertRow(-1);
-                    for (var c=0; c<column.length; c++){
-                        var cell = tr.insertCell(-1);
-                        cell.innerHTML = responseObject[i][column[c]]
-                    }
-                }
-                return table;
+                document.getElementById("table").innerHTML = degreesContent;
             }
         };
         xhr.open('GET', 'Assignment5.json', true);
