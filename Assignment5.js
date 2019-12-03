@@ -12,7 +12,7 @@ const button = document.getElementById("button");
                         }
                     }
                 }
-                var table = document.createElement ("table");
+                var table = document.createElement("table");
                 var tr = table.insertRow(-1);
                 for (var i=0; i<column.length; i++){
                     var th = document.createElement("th");
@@ -26,9 +26,7 @@ const button = document.getElementById("button");
                         cell.innerHTML = responseObject[i][column[c]]
                     }
                 }
-                var table = document.getElementById("table");
-                table.innerHTML = "";
-                table.appendChild(table);
+                return table;
             }
         };
         xhr.open('GET', 'Assignment5.json', true);
