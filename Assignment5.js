@@ -13,14 +13,14 @@ const button = document.getElementById("button");
                     }
                 }
                 var table = document.createElement ("table");
-                var tr = table.row(-1);
+                var tr = table.insertRow(-1);
                 for (var i=0; i<column.length; i++){
                     var th = document.createElement("th");
                     th.innerHTML = column[i];
                     tr.appendChild(th);
                 }          
                 for (var i=0; i<responseObject.my_degrees.length; i++){
-                    tr=table.row(-1);
+                    tr=table.insertRow(-1);
                     for (var c=0; c<column.length; c++){
                         var cell = tr.insertCell(-1);
                         cell.innerHTML = responseObject[i][column[c]]
