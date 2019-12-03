@@ -6,7 +6,6 @@ const button = document.getElementById("button");
                 responseObject = JSON.parse(xhr.responseText);
                 }
                 document.write(responseObject);
-            }
         };
         xhr.open('GET', 'Assignment5.json', true);
         xhr.send(null);
