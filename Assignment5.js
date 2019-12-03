@@ -18,7 +18,7 @@ const button = document.getElementById("button");
                         + '';
                     degreesContent +='<th>Graduation</th>'
                         +responseObject.my_degrees[i].graduation
-                        + '';
+                        + '<br>';
                 }
                 document.getElementById("table").innerHTML = degreesContent;
             }
