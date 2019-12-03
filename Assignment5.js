@@ -4,8 +4,24 @@ const button = document.getElementById("button");
         xhr.onload = function () {
             if(xhr.status === 200) {
                 responseObject = JSON.parse(xhr.responseText);
+                var degreesContent = '';
+                for (var i=0; i<responseObject.my_degrees.length; i++) {
+                    degreesContent +='<thead>';
+                    degreesContent +='<tr>School</tr>'
+                        +responseObject.my_degrees[i].school
+                        + '<br>';
+                    degreesContent +='<tr>Major</tr>'
+                        +responseObject.my_degrees[i].major
+                        + '<br>';
+                    degreesContent +='<tr>Type</tr>'
+                        +responseObject.my_degrees[i].type
+                        + '<br>';
+                    degreesContent +='<tr>Graduation</tr>'
+                        +responseObject.my_degrees[i].graduation
+                        + '<br><br>';
                 }
-                document.write(responseObject);
+                document.getElementById("table").innerHTML = degreesContent;
+            }
         };
         xhr.open('GET', 'Assignment5.json', true);
         xhr.send(null);
